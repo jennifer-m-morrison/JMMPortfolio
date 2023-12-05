@@ -81,6 +81,11 @@ a:visited {
     color: var(--white);
 }
 
+figcaption a,
+figcaption a:visited {
+    color: var(--darkest);
+}
+
 a:hover {
     opacity: 0.7;
 }
@@ -263,6 +268,7 @@ main p {
 .projects h3,
 .projects p {
     color: var(--white);
+    text-align: center;
 }
 
 /* Image styles for projects section */
@@ -404,6 +410,10 @@ figure img {
     margin-bottom: 0.8em;
 }
 
+figcaption a {
+    color: var(--darkest);
+}
+
 figcaption {
     margin-bottom: 1em;
     color: var(--darkest);
@@ -457,6 +467,14 @@ footer li {
 
     h1 {
         font-size: 4rem;
+    }
+
+    h3 {
+        font-size: 1.7rem;
+    }
+
+    main p {
+        font-size: 1.2rem;
     }
 
     /* REQUIRED: Navigation For Tablet Hamburger Menu */
@@ -587,27 +605,6 @@ footer li {
     /* REQUIRED Grid Rule to check browser support grid-------------*/
     @supports (grid-area: auto) {
 
-        /* Tablet: Grid container for main sections of site */
-        /* .site {
-        display: grid;
-        grid-template-areas:
-            'header header header'
-            'main main main'
-            'footer footer footer';
-    }
-
-    header {
-        grid-area: header;
-    }
-
-    main {
-        grid-area: main;
-    }
-
-    footer {
-        grid-area: footer;
-    } */
-
         /* Tablet: Grid container to place sections within main into separate grid */
         .main-content-home {
             display: grid;
@@ -677,7 +674,7 @@ footer li {
         /********** Tablet: About Page *************/
         .about-intro {
             display: grid;
-            grid-template-columns: 0.5fr 4fr 3fr 4fr 0.5fr;
+            grid-template-columns: 0.5fr 5fr 3fr 5fr 0.5fr;
             grid-template-areas: ". image1 intro1 intro1 ."
                 ". intro2 intro2 image2 .";
             column-gap: 2em;
