@@ -880,3 +880,19 @@ footer li {
     }
 
 }
+
+/* Large Monitor Displays */
+/* Most things looked ok on my husband's large monitor but I did fix the paragraph on the hero image on the home page because it was very wide. */
+@media screen and (min-width: 1200px) {
+
+    h2, .intro h2 {
+        font-size: 2.5rem;
+    }
+
+    .intro p {
+        width: 70%;
+        margin: 0 auto;
+        font-size: 1.3rem;
+    }
+
+}
