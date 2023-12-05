@@ -1,22 +1,25 @@
 /* 
 Jennifer Morrison 
-October 26, 2023 
+December 4, 2023 
 File Name: portfolio.css
-Web 210 - Assignment 10
+Web 210 - Final Project
 
 COLOR PALETTE from https: //coolors.co/
 Set Variables for font colors*/
 :root {
 
-    --dkpurple: #4C1D54;
     --ltgrey: #dce1e4;
     --medgrey: #9AA8B0;
     --dkgrey: #3D4D56;
     --black: #333;
     --white: #fff;
+    --darkest: #0d3740;
+    --medium: #557379;
+    --light: #ced7d8;
+
 }
 
-/* Global Styles  ------------------------------------------------*/
+/* Global Styles and CSS Reset  ------------------------------------------------*/
 
 /* Set HTML root font-size and border-box styling */
 html {
@@ -30,84 +33,173 @@ html {
     box-sizing: inherit;
 }
 
+body,
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
 /* MOBILE Display ---------------------------------------------*/
 
 /* Body section styles */
 body {
-    margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.1rem;
     color: var(--black);
     line-height: 1.6;
-    text-align: center;
+    /* text-align: center; */
 }
 
-/* Navigation Styles */
-nav {
-    background-color: var(--dkpurple);
+header {
+    background-color: var(--darkest);
+    color: var(--white);
     width: 100%;
-    color: var(--white);
+    padding-left: 1em;
+    text-align: left;
 }
 
-nav ul {
-    text-align: center;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
+main {
+    padding: 0 1em;
 }
 
-nav ul li {
-    font-size: 1rem;
-    display: block;
-    position: relative;
-    padding: 0.8em;
-    cursor: pointer;
+.main-content-home {
+    padding: 0;
 }
 
-nav li a {
-    color: #273B50;
-    text-decoration: none;
-    padding: 0.3em 0.5em;
-    color: var(--white);
-}
-
-nav li a:hover {
-    background-color: var(--ltgrey);
-    color: var(--dkpurple);
-}
-
-/* Image and link styles */
+/* Image, figure, and link styles */
 img {
+    display: block;
     max-width: 100%;
     border-radius: 10px;
+    margin: 0 auto;
 }
 
-a {
+
+a,
+a:visited {
     color: var(--white);
+}
+
+a:hover {
+    opacity: 0.7;
 }
 
 /* Heading and paragraph font styles */
+h1,
+h2 {
+    text-align: center;
+}
+
 h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    color: var(--dkpurple);
-    text-shadow: 2px 2px 8px var(--dkgrey);
+    font-size: 3rem;
+    color: var(--darkest);
+    text-shadow: 2px 2px 8px var(--medium);
+    line-height: 1.3;
+    margin: 0.4em 0;
 }
 
 h2 {
     font-family: 'Kalam', cursive;
     margin: 0;
-    font-size: 2.5rem;
-    color: var(--dkpurple);
+    font-size: 2.2rem;
+    color: var(--darkest);
 }
 
 h3 {
-    margin-bottom: 0;
+    font-family: 'Kalam', cursive;
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--darkest);
 }
 
-p {
+main p {
     text-align: left;
+    font-size: 1.1rem;
+}
+
+/* Class to remove content for mobile display */
+.tab-desk {
+    display: none;
+}
+
+/* Navigation For Mobile Hamburger Menu */
+.navbar {
+    height: 8em;
+}
+
+.navbar h2 {
+    font-size: 1.7rem;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+.navbar-title {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 70%;
+    padding-top: 1em;
+}
+
+.navbar-title img {
+    margin: 0;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    position: absolute;
+    z-index: 10;
+    top: 1.5em;
+    right: 1.5em;
+    padding: 0.7em;
+    font-size: 1.2rem;
+    background: var(--darkest);
+    color: var(--white);
+    cursor: pointer;
+}
+
+
+/* Main Navigation Links Styles */
+.menu {
+    background: var(--darkest);
+    list-style: none;
+    padding: 2em 1em;
+    line-height: 2.5;
+    display: none;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.4s;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+.menu,
+#navlinks {
+    display: block;
+}
+
+.navlinks a {
+    display: none;
+}
+
+.closeIcon {
+    display: none;
+}
+
+.navbar li a:visited,
+.navbar li a,
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.showlinks {
+    transform: translateY(0);
 }
 
 
@@ -115,7 +207,7 @@ p {
 .content-wrap {
     width: 90%;
     margin: 0 auto;
-    padding: 2em 0;
+    padding: 1.5em 0;
 }
 
 .item-details h3+p {
@@ -127,50 +219,81 @@ p {
     margin: 0;
 }
 
-/* Profile/Header Section */
-
-header {
+/* Hero: Profile Section Styles */
+.hero {
     background-image: url(../images/whitebrick.jpg);
     background-size: cover;
+}
+
+.hero h1 {
+    font-size: 4rem;
 }
 
 .intro {
     margin: 0 auto;
 }
 
-header img {
+.intro p {
+    font-weight: bold;
+}
+
+.hero img {
     display: none;
 }
 
 /* Skills Section */
-
 .skills {
-    background-color: var(--medgrey);
+    background-color: var(--light);
+}
+
+.skills h2 {
+    color: var(--darkest);
+    padding-top: 0.5em;
 }
 
 /* Projects Section */
-
 .projects {
-    background-color: var(--ltgrey);
+    background-color: var(--darkest);
 }
 
-/* Text colors for  projects and education sections */
-.projects a,
+.project-item {
+    text-align: center;
+}
+
+/* Text colors for projects and education sections */
+
 .projects h2,
 .projects h3,
 .projects p {
-    color: var(--dkgrey);
+    color: var(--white);
 }
 
 .projects img {
     width: 90%;
-    border: 1px solid var(--dkgrey);
-    box-shadow: 5px 5px 8px var(--dkgrey);
+    border: 1px solid var(--darkest);
+    box-shadow: 5px 5px 8px var(--darkest);
 }
 
-/* Button styling for projects section */
-.projects .btn {
-    background-color: var(--dkgrey);
+/* Button styles for projects section */
+.btn-lt,
+.btn-lt:visited {
+    background-color: var(--white);
+    color: var(--darkest);
+    text-decoration: none;
+    padding: 0.5em 0.75em;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Opacity change for button hover state */
+.btn-lt:hover {
+    background-color: var(--medium);
+    color: var(--white);
+}
+
+
+.btn-dark {
+    background-color: var(--darkest);
     color: var(--white);
     text-decoration: none;
     padding: 0.5em 0.75em;
@@ -178,53 +301,122 @@ header img {
     display: inline-block;
 }
 
-/* Added opacity change for button hover state */
-.projects .btn:hover {
-    background-color: rgba(39, 59, 80, 70%);
+/* Opacity change for button hover state */
+.btn-dark:hover {
+    background-color: var(--medium);
+    color: var(--white);
 }
 
-/*Added bottom border to project section for easier readability */
-.grid-container>section {
-    border-bottom: 2px solid var(--dkgrey);
-}
-
-.grid-container>section:last-of-type {
-    border-bottom: none;
-}
-
-/* Removing project container bottom padding and margin */
+/* Bottom border to project section for easier readability */
 .project-item:not(:last-of-type) {
     margin-bottom: 1em;
     padding-bottom: 1em;
+    border-bottom: 1px solid var(--white);
 }
 
-/* Changed text color for h3 and removed top margin */
+/* Remove top margin for h3 */
 .project-item h3 {
+    font-size: 1.7rem;
     margin-top: 0.5em;
 }
-
 
 /* Education Section  ----------------------------------------------------------*/
 
 .education,
 .education h2,
 .education a {
-    background-color: var(--dkgrey);
+    background-color: var(--medium);
     color: var(--white)
 }
 
-.college-text {
+.education {
+    padding-top: 1.5em;
+}
+
+.education img {
+    margin-bottom: 1em;
+}
+
+.college-text,
+.college-text p {
     text-align: center;
 }
 
-/* Footer/Contact Information Section ------------------*/
+.college-text:first-of-type {
+    border-bottom: 1px solid var(--darkest);
+}
 
-/* Added background color */
+/********** Contact Page Styles **********/
+label,
+input,
+textarea {
+    display: block;
+    width: 90%;
+    font-size: 1.1rem;
+}
+
+input,
+textarea {
+    margin-bottom: 1.5em;
+}
+
+.contact-card {
+    margin-bottom: 1.5em;
+}
+
+.form {
+    max-width: 300px;
+    margin-bottom: 1.5em;
+}
+
+.contact-card a {
+    color: black;
+    font-size: 0.9rem;
+}
+
+.contact-card i {
+    color: black;
+    margin-right: 0.5em;
+}
+
+/********** Portfolio Page Styles **********/
+.portfolio p {
+    margin-left: 1em;
+}
+
+figure {
+    margin: 0 1em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--darkest);
+    text-align: center;
+}
+
+figure:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2em;
+}
+
+figure img {
+    border: 4px solid var(--darkest);
+    box-shadow: 2px 2px 5px 5px var(--darkest);
+    margin-bottom: 0.8em;
+}
+
+figcaption {
+    margin-bottom: 1em;
+    color: var(--darkest);
+    text-decoration: underline;
+}
+
+/***** Footer Styles *****/
 footer,
-footer a {
-    background-color: var(--dkpurple);
+footer a,
+footer p {
+    background-color: var(--darkest);
+    text-align: center;
     color: var(--white);
 }
+
 
 footer h2 {
     color: var(--white);
@@ -234,9 +426,9 @@ footer h2 {
 /* Email and Social Media links */
 footer ul {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.5em;
     list-style: none;
     padding-left: 0;
 }
@@ -245,37 +437,161 @@ footer li {
     padding: 0.25em 0;
 }
 
+
+
 /* TABLET Display ---------------------------------------------*/
 
 @media screen and (min-width: 760px) {
 
     /* Tablet: Text center-aligned */
-    header,
     body,
     footer {
         text-align: center;
     }
 
-    h1 {
-        font-size: 5rem;
+    header {
+        padding: 0;
     }
 
-    nav ul {
+    h1 {
+        font-size: 4rem;
+    }
+
+    /* REQUIRED: Navigation For Tablet Hamburger Menu */
+
+    /* Hide hamburger icon for tablet and desktop */
+    .hamburger {
+        display: none;
+    }
+
+    .tab-desk {
+        display: block;
+    }
+
+    /* Changed positioning from absolute to relative to move nav back to top and not under hamburger icon */
+    nav a {
+        font-size: 1.4rem;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 12em;
+    }
+
+    .navbar h2 {
+        font-size: 2.5rem;
+    }
+
+    .navbar-title {
         display: flex;
         justify-content: center;
+        gap: 0.7em;
+        padding-top: 0;
+        width: auto;
     }
 
-    .site {
+    .navbar-links {
+        position: relative;
+        transform: translateY(0);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 0.9em;
+        gap: 5em;
+        margin: 0;
+        padding: 0;
+        text-decoration: underline;
+    }
+
+    /********** Tablet: Home Page **************/
+
+    .intro.content-wrap {
+        width: 75%;
+        line-height: 2;
+    }
+
+    .project-item img {
+        width: 80%;
+    }
+
+    .project-item:not(:last-of-type) {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+
+    /* Tablet: Education section styles */
+    .education-details {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .education-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .education img {
+        width: 50%;
+    }
+
+    .college-text:first-of-type {
+        border-bottom: none;
+    }
+
+    .divider>section {
+        border-bottom: none;
+    }
+
+
+
+    /********** Tablet: About Page *************/
+
+    /********** Tablet: Portfolio Page **********/
+
+    .portfolio p {
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+
+    figure {
+        border-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    footer .content-wrap {
+        padding: 1em 0;
+    }
+
+   /********** Tablet: About Page *************/
+    .contact-card {
+        text-align: left;
+        padding-top: 1.5em;
+    }
+
+    .contact-card img {
+        margin: 0;
+    }
+
+
+    /* REQUIRED Grid Rule to check browser support grid-------------*/
+    @supports (grid-area: auto) {
+
+        /* Tablet: Grid container for main sections of site */
+        /* .site {
         display: grid;
         grid-template-areas:
-            'nav nav nav'
             'header header header'
             'main main main'
             'footer footer footer';
-    }
-
-    nav {
-        grid-area: nav;
     }
 
     header {
@@ -288,135 +604,225 @@ footer li {
 
     footer {
         grid-area: footer;
+    } */
+
+        /* Tablet: Grid container to place sections within main into separate grid */
+        .main-content-home {
+            display: grid;
+            align-items: center;
+            grid-template-areas:
+                'hero hero'
+                'projects projects'
+                'skills skills'
+                'education education';
+        }
+
+        .hero {
+            grid-area: hero;
+        }
+
+        .projects {
+            grid-area: projects;
+        }
+
+        .skills {
+            grid-area: skills;
+            width: 100%;
+            height: 100%;
+        }
+
+        .education {
+            grid-area: education;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* .item-details {
+            width: 80%;
+        } */
+
+        /* Tablet: Grid container for About section of Home Page */
+        .about {
+            display: grid;
+            gap: 1em;
+            grid-template-areas:
+                'firstpic firstpic para1 para1 para1'
+                'para2 para2 para2 secpic secpic';
+        }
+
+        .about img:first-of-type {
+            grid-area: firstpic;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about p:first-of-type {
+            grid-area: para1;
+        }
+
+        .about img:last-of-type {
+            grid-area: secpic;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about p:last-of-type {
+            grid-area: para2;
+        }
+
+
+
+        /* Tablet: Grid container for Projects section on Home Page */
+        .grid-container {
+            /* display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 3em 1.5em; */
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1em;
+
+        }
+
+        .grid-container>* {
+            flex-basis: 45%;
+        }
+
+        /* .grid-container>section {
+            border-bottom: none;
+            flex-basis: 100%;
+        } */
+
+        /* .project-item { */
+        /* display: flex;
+            flex-direction: column; */
+        /* justify-content: flex-start; */
+        /* justify-content: space between; 
+            margin: 0;
+            padding: 0; */
+        /*align-items: center; */
+
+
+
+        /* .project-item {
+            grid-column: span 2;
+        }
+
+        .project-item:last-of-type {
+            grid-column: 2 / 4;
+        } */
+
+
+
+        /********** Tablet: Contact Page **********/
+        .main-content-contact {
+            display: grid;
+            grid-template-columns: 0.8fr 4fr 6fr 0.8fr;
+            grid-template-areas:
+                '. header header .'
+                '. intro intro .'
+                '. info form .';
+            /* column-gap: 3em; */
+        }
+
+        .main-content-contact h1 {
+            grid-area: header;
+        }
+
+        .main-content-contact p {
+            grid-area: intro;
+        }
+
+        .contact-card {
+            grid-area: info;
+        }
+
+        .form {
+            max-width: 100%;
+            margin-left: 2.5em;
+            grid-area: form;
+            text-align: left;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 2.5fr;
+            gap: 1em;
+            margin-top: 1em;
+        }
+
+        .form-container > :last-child {
+            grid-column: span 2;
+            justify-self: center;
+        }
+
+        .contact-card i {
+            text-align: left;
+        }
+
+        /********** Tablet: Portfolio Page Grid **********/
+        .gallery {
+            display: grid;
+            grid-template-columns: 0.5fr 4fr 0.5fr 4fr 0.5fr;
+            grid-template-areas: ". img1 . img2 ."
+                ". img3 . img4 .";
+            grid-row-gap: 1.2em;
+        }
+
+        .gallery .img1 {
+            grid-area: img1;
+        }
+
+        .gallery .img2 {
+            grid-area: img2;
+        }
+
+        .gallery .img3 {
+            grid-area: img3;
+        }
+
+        .gallery .img4 {
+            grid-area: img4;
+        }
+
     }
-
-    .main {
-        display: grid;
-        align-items: center;
-        grid-template-areas:
-            'projects projects'
-            'skills skills'
-            'education education';
-    }
-
-    .skills {
-        grid-area: skills;
-        width: 100%;
-        height: 100%;
-    }
-
-    /*About Section Grid styling*/
-    .about {
-        display: grid;
-        gap: 1em;
-        grid-template-areas:
-            'firstpic firstpic para1 para1 para1'
-            'para2 para2 para2 secpic secpic';
-    }
-
-    .about img:first-of-type {
-        grid-area: firstpic;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .about p:first-of-type {
-        grid-area: para1;
-    }
-
-    .about img:last-of-type {
-        grid-area: secpic;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .about p:last-of-type {
-        grid-area: para2;
-    }
-
-    .projects {
-        grid-area: projects;
-    }
-
-    .education {
-        grid-area: education;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .item-details {
-        width: 80%;
-    }
-
-
-    /* Tablet: Project section styles */
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        /* grid-template-rows: auto auto; */
-        gap: 3em 1.5em;
-    }
-
-    .grid-container>section {
-        border-bottom: none;
-    }
-
-    .project-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .project-item {
-        grid-column: span 2;
-    }
-
-    .project-item:last-of-type {
-        grid-column: 2 / 4;
-    }
-
-    .project-item img {
-        width: 80%;
-    }
-
-    /* Tablet: Education section styles */
-    .education img {
-        width: 60%;
-    }
-
-    .divider>section {
-        border-bottom: none;
-    }
-
-
-    footer ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    footer ul a {
-        padding: 1em;
-    }
-
-
 }
 
-/* REQUIRED: Added media query for smaller displays */
+/* DESKTOP Display ---------------------------------------------*/
+
+/* REQUIRED: Added media query for desktop displays */
 @media screen and (min-width: 950px) {
 
+    /* Desktop: Nav styles */
     nav ul li {
         font-size: 1.4rem;
     }
 
-    header {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2em;
+        height: 8em;
+    }
+
+
+    .navbar-title {
+        justify-content: flex-start;
+    }
+
+    .navbar-links {
+        text-decoration: none;
+    }
+
+    /* Desktop: Home Page - Hero section styles */
+    .hero {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -424,41 +830,73 @@ footer li {
         min-height: 92vh;
     }
 
-    h1 {
-        font-size: 7rem;
+    .hero h1 {
+        font-size: 6rem;
         line-height: 1;
         margin-bottom: 20px;
     }
 
-    .intro {
-        width: 65%;
-        line-height: 2;
+    p {
+        font-size: 1.3rem;
+    }
+        /* Desktop: Home Page - Education section styles */
+    .education {
+        flex-direction: column;
     }
 
-    .intro p {
-        font-size: 1.2rem;
-        /* font-style: italic; */
-        font-weight: bold;
+    .education-details {
+        flex-direction: column;
+        padding-top: 2cap;
     }
 
-
-    .main {
-        grid-template-areas:
-            'projects projects projects projects '
-            'skills skills education education';
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr 1fr 1fr;
-
-    }
-
-    .project-item,
-    .project-item:last-of-type {
-        grid-column: span 1;
-        justify-content: flex-start;
+    .education-details img {
+        width: 70%;
     }
 
 
+
+    /* REQUIRED: Desktop grid styles to change columns for larger screens */
+    @supports (grid-area: auto) {
+        .main-content-home {
+            grid-template-areas:
+                'hero hero hero hero'
+                'projects projects projects projects '
+                'skills skills education education';
+        }
+
+
+        /* 
+        .project-item,
+        .project-item:last-of-type {
+            grid-column: span 1;
+            justify-content: flex-start;
+        }
+
+        .grid-container {
+            grid-template-columns: 1fr 1fr 1fr;
+        } */
+
+        /********** Desktop: Contact Page **********/
+        .main-content-contact {
+            grid-template-columns: 2fr 3fr 5fr 2fr;
+        }
+
+       
+        /********** Desktop: Portfolio Page **********/
+
+        .portfolio h1 {
+            font-size: 3.5em;
+            margin-top: 0.5em;
+        }
+
+        .gallery {
+            grid-template-columns: 1fr 2.5fr 0.5fr 2.5fr 1fr;
+            grid-template-areas: ". img1 . img2 ."
+                ". img3 . img4 .";
+            grid-row-gap: 1.2em;
+
+        }
+
+    }
 
 }

@@ -1,0 +1,135 @@
+<!--  Jennifer Morrison
+      December 4, 2023
+      File Name: about.html
+      Web 210 - Assignment 10 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Jennifer Morrison | Contact</title>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kalam&family=Open+Sans&display=swap"
+          rel="stylesheet">
+    <script src="https://kit.fontawesome.com/32cecca525.js"
+                crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="css/portfolio.css">
+</head>
+
+<body class="site">
+    <!-- ***********  HEADER ***************** -->
+    <header>
+        <!-- Responsive navbar-->
+        <nav class="navbar">
+            <a class="navbar-title"
+               href="index.html">
+                <img src="images/white-logo.png"
+                     alt="html coding brackets with pencil inside">
+                <h2>Jennifer Morrison Designs</h2>
+            </a>
+    
+            <ul class="menu navbar-links">
+                <li><a class="menuItem"
+                       href="index.html">Home</a></li>
+                <li><a class="menuItem"
+                       href="about.html">About</a></li>
+                <li><a class="menuItem"
+                       href="portfolio.html">Portfolio</a></li>
+                <li><a class="menuItem"
+                       href="contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger">
+                <i class="menuIcon fa-solid fa-bars"></i>
+                <i class="closeIcon fa-solid fa-xmark"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ***********  MAIN ***************** -->
+
+    <!-- Main Section-->
+    <main>
+        <section class="main-content-contact">
+            <h1 class="center">Let's Connect!</h1>
+
+            <p>I'd love to work with you on your next project. Find my contact details
+                below or send me a message, and I'll respond promptly. I look forward
+                to meeting you!</p>
+            <!-- Contact Details-->
+            <div class="contact-card">
+                <img class="card-img tab-desk"
+                     src="images/jmlogo.png"
+                     alt="Jennifer Morrison Designs logo">
+                <div class="card-content">
+                    <p> Jennifer Morrison Designs<br>8433 Eden Park Drive<br>Raleigh, NC
+                        27613</p>
+                    <a href="mailto:jmmorrison2@my.waketech.edu">
+                        <i class="fa-solid fa-envelope fa-lg"></i>
+                        jmitchell.morrison@gmail.com</a>
+                </div>
+            </div>
+            <!-- Contact Form-->
+            <div class="form">
+                <h3>Send a message:</h3>
+                <form class="form-container">
+                    <label for="name"
+                           class="field">
+                        <span class="label-text">Name:</span></label>
+                    <input type="text"
+                           name="name"
+                           id="name"
+                           required>
+                    <label for="email"
+                           class="field">
+                        <span class="label-text">Email:</span></label>
+                    <input type="email"
+                           name="email"
+                           id="email"
+                           required>
+                    <label for="message"
+                           class="field">
+                        <span class="label-text">Message:</span></label>
+                    <textarea name="message"
+                              id="message"
+                              rows="10"
+                              cols="20">
+                                    </textarea>
+                    <button class="btn-dark">Send</button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- *********  FOOTER / CONTACT INFO / SOCIAL MEDIA  ********* -->
+    <footer id="contact">
+        <div class="content-wrap">
+            <p>&copy; Copyright 2023. All Rights Reserved. </p>
+            <h2>Let's connect!</h2>
+            <!-- Social media and contact links. -->
+            <ul class="contact-list">
+                <li><a href="mailto:jmmorrison2@my.waketech.edu"><img
+                             src="images/email_icon.png"
+                             alt="email icon"></a></li>
+                <li><a href="https://www.facebook.com/jenny.m.morrison"
+                       target="_blank"><img src="images/facebook50.png"
+                             alt="Facebook social media icon"></a></li>
+                <li><a href="https://www.instagram.com/morrison_jenny/"
+                       target="_blank"><img src="images/instagram50.png"
+                             alt="Instagram social media icon"></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>

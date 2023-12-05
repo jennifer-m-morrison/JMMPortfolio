@@ -1,7 +1,7 @@
 <!--  Jennifer Morrison
-      October 26, 2023
+      December 4, 2023
       File Name: index.html
-      Web 210 - Assignment 10 -->
+      Web 210 - Final Project -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,43 +16,63 @@
   <link rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kalam&family=Open+Sans&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Kalam&family=Open+Sans:wght@400;700&display=swap"
         rel="stylesheet">
+  <script src="https://kit.fontawesome.com/32cecca525.js"
+          crossorigin="anonymous"></script>
   <link rel="stylesheet"
         href="css/portfolio.css">
 </head>
 
-<body class="site">
-  <!-- Main Navigation Menu -->
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#skills">About</a></li>
-      <li><a href="#projects">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  <!-- ***********  PROFILE / HERO / INTRO  ***************** -->
+<body class="body-home">
+  <!-- ***********  HEADER ***************** -->
   <header>
-    <img src="images/jmlogo400.png"
-         alt="graphic of html coding brackets with pencil inside"
-         srcset="images/logo200.png 200w, images/jmlogo400.png 400w"
-         sizes="(max-width:400px) 50vw, 400px">
-    <div class="intro content-wrap">
-      <h1>Jennifer Morrison</h1>
-      <h2>Web Developer</h2>
-      <p>My name is Jennifer, and I am currently a web developer student at Wake
-        Tech Community College in Raleigh, NC. While refining my HTML, CSS, and
-        Javascript
-        skills, I am also learning industry best practices to provide clients with
-        functional, visually-appealing websites tailored to their individual needs and
-        goals.</p>
-    </div>
+    <!-- Responsive navbar-->
+    <nav class="navbar">
+      <a class="navbar-title"
+         href="index.html">
+        <img src="images/white-logo.png"
+             alt="html coding brackets with pencil inside">
+        <h2>Jennifer Morrison Designs</h2>
+      </a>
+
+      <ul class="menu navbar-links">
+        <li><a class="menuItem"
+             href="index.html">Home</a></li>
+        <li><a class="menuItem"
+             href="about.html">About</a></li>
+        <li><a class="menuItem"
+             href="portfolio.html">Portfolio</a></li>
+        <li><a class="menuItem"
+             href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger">
+        <i class="hamIcon fa-solid fa-bars"
+           onclick="hamburger()"></i>
+        <i class="closeIcon fa-solid fa-xmark"></i>
+      </button>
+    </nav>
   </header>
+
   <!-- ***********  MAIN ***************** -->
-  <main class="main">
+  <!-- ***********  PROFILE / HERO / INTRO  ***************** -->
+  <main class="main-content-home">
+    <section class="hero">
+      <div class="intro content-wrap">
+        <h1>Jennifer Morrison</h1>
+        <h2>Web Developer</h2>
+        <p>My name is Jennifer, and I am currently a web developer student at Wake
+          Tech Community College in Raleigh, NC. While refining my HTML, CSS, and
+          JavaScript
+          skills, I am also learning industry best practices to provide clients with
+          functional, visually-appealing websites tailored to their individual needs and
+          goals.</p>
+      </div>
+    </section>
+
     <section class="skills"
              id="skills">
+      <h2>My Vision</h2>
       <div class="content-wrap about">
         <img src="images/innovation.jpg"
              alt="HTML and CSS coding book on cream tabletop with spiral notebook and macbook computer">
@@ -69,78 +89,64 @@
           commitments, and
           maintain a high level of integrity in all my professional pursuits.</p>
       </div>
-
     </section>
+
     <!-- ***********  PROJECTS / PORTFOLIO  **************** -->
-    <section class="projects"
-             id="projects">
+    <section class="projects">
       <div class="content-wrap divider">
         <h2>Featured Projects</h2>
         <p>Please view some of my original designs below. More information can be found
-          at:
-          <a href="https://jennifermorrisondesigns.com">jennifermorrisondesigns.com</a>.
+          at my
+          <a href="portfolio.html">portfolio</a> page:
         </p>
-
         <!-- Start of Project Block -->
-        <div class="grid-container">
-          <section class="project-item">
+        <div class="gallery">
+          <section class="project-item img1">
             <img src="images/sprout.png"
                  alt="Sprout and Grow homepage">
             <h3>Sprout & Grow Nursery</h3>
-            <p>Designed and developed a website that communicates focus on organic
-              gardening practices.</p>
-            <a class="btn"
+            <p>Designed and developed a website for an organic
+              nursery.</p>
+            <a class="btn-lt"
                href="https://wcet.waketech.edu/jmmorrison2/WEB140/sprout/index.html"
                target="_blank">View project</a>
           </section>
-
-          <section class="project-item">
+          <section class="project-item img2">
             <img src="images/topsail.png"
                  alt="Topsail Beach homepage">
             <h3>Topsail Beach</h3>
-            <p>Designed a landing page for marketing a promotional author
-              event
-              for a local family-owned bookstore. </p>
-            <a class="btn"
+            <p>Designed a marketing website for popular North Carolina beach. </p>
+            <a class="btn-lt"
                href="https://wcet.waketech.edu/jmmorrison2/web125/lesson10/index.html"
                target="_blank">View project</a>
           </section>
-          <section class="project-item">
-            <img src="images/oasis.png"
-                 alt="Oasis books homepage">
-            <h3>Oasis Books</h3>
-            <p>Designed and published a landing page for marketing a promotional author
-              event
-              for a local family-owned bookstore. </p>
-            <a class="btn"
-               href="https://wcet.waketech.edu/jmmorrison2/WEB110/oasis/index.html"
-               target="_blank">View project</a>
-          </section>
+
+          <!-- End of Project block. -->
         </div>
-        <!-- End of Project block. -->
-      </div>
+        </div>
     </section>
     <!-- ***********  EDUCATION & CERTIFICATIONS ************* -->
     <section class="education">
-      <div class="content-wrap item-details">
-        <h2>Education</h2>
+      <h2>Education</h2>
+      <div class="content-wrap item-details education-details">
         <img src="images/education.jpg"
              alt="design notebook and pen on wooden tabletop with cell phone and keyboard">
 
         <!-- School Details -->
-        <section class="college-text">
-          <h3><a href="https://www.waketech.edu/"
-               target="_blank">Wake Technical Community College</a> - Raleigh, NC </h3>
-          <p>Pursuing A.A.S. Web Development</p>
-        </section>
+        <div class="education-text">
+          <section class="college-text">
+            <p><a href="https://www.waketech.edu/"
+                 target="_blank">Wake Tech Community College</a> - Raleigh, NC </p>
+            <p>Pursuing A.A.S. Web Development</p>
+          </section>
 
-        <section class="college-text">
-          <h3><a href="https://www.wm.edu"
-               target="_blank">College of William and Mary</a> - Williamsburg, VA
-          </h3>
-          <p>B.A. Economics<br>
-            Magna Cum Laude and Phi Beta Kappa National Honor Society</p>
-        </section>
+          <section class="college-text">
+            <p><a href="https://www.wm.edu"
+                 target="_blank">College of William and Mary</a> - Williamsburg, VA
+            </p>
+            <p>B.A. Economics<br>
+          </section>
+        </div>
         <!-- End of School Details -->
       </div>
     </section>
@@ -149,10 +155,9 @@
   <!-- *********  FOOTER / CONTACT INFO / SOCIAL MEDIA  ********* -->
   <footer id="contact">
     <div class="content-wrap">
-      <h2>Contact Me</h2>
+      <p>&copy; Copyright 2023. All Rights Reserved. </p>
+      <h2>Let's connect!</h2>
       <!-- Social media and contact links. -->
-      <a href="https://jennifermorrisondesigns.com"
-         target="_blank">jennifermorrisondesigns.com</a>
       <ul class="contact-list">
         <li><a href="mailto:jmmorrison2@my.waketech.edu"><img src="images/email_icon.png"
                  alt="email icon"></a></li>
@@ -165,6 +170,8 @@
       </ul>
     </div>
   </footer>
+
+  <script src="scripts/scripts.js"></script>
 </body>
 
 </html>
